@@ -1,0 +1,19 @@
+@echo Ejecuta este parametro: %NOMBRE_APLICACION%
+cd C:\Users\chiva\OneDrive\Escritorio\IIS
+tar -xf index.zip
+cd C:\Users\chiva\OneDrive\Escritorio\IIS\%NOMBRE_APLICACION%
+dir
+@echo %NOMBRE_APLICACION%
+cd C:\inetpub\wwwroot\%CARPETA_RAIZ%
+dir
+cd ..
+echo %cd%
+mkdir C:\inetpub\wwwroot\%CARPETA_FECHA%
+cd C:\inetpub\wwwroot\%CARPETA_RAIZ%
+copy C:\inetpub\wwwroot\%CARPETA_RAIZ%\*.*  C:\inetpub\wwwroot\%CARPETA_FECHA%
+cd ..
+cd C:\inetpub\wwwroot\%CARPETA_RAIZ%
+Del *.* /S /F /Q
+dir
+cd C:\Users\chiva\OneDrive\Escritorio\IIS\%NOMBRE_APLICACION%
+copy C:\Users\chiva\OneDrive\Escritorio\IIS\%NOMBRE_APLICACION%\*.*  C:\inetpub\wwwroot\%CARPETA_RAIZ%
